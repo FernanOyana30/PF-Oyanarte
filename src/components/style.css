@@ -1,0 +1,82 @@
+/*Estilos Navbar*/
+
+.navBar{
+    background-color: rgb(78, 132, 250);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 15px;
+    border-bottom: 2px solid;
+}
+
+.container-nav{     
+    width: 80%;
+    height: 100px;    
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.style-brand{
+    display: flex;
+    align-items: center;
+    color: white;    
+}
+
+.style-nav{        
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    list-style: none;
+    font-size: 20px;
+    transform: translateY(10px);    
+}
+
+.style-list{
+    color: white;
+    text-decoration: none;
+}
+
+.style-list:hover{
+    color: orange;
+}
+
+
+/*Estilos ícono carrito*/
+.cart-style{    
+    color: white;
+    text-decoration: none;
+    display: flex;    
+    justify-content: flex-end;
+    padding: 3px 7px;
+  position: relative;
+  display: inline-block;    
+}
+
+.cart-style:hover{
+    color: orange;
+}
+
+.cart-icon{
+    font-size: 24px;
+}
+
+.cart-badge{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 1px 5px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-size: 14px;
+}
+
+/*Estilos ItemListContainer*/
+.style-container{
+    padding-top: 20px;
+}
