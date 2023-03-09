@@ -1,20 +1,7 @@
 import { useEffect, useState } from "react";
 import productos from "../productos";
+import ItemList from "./ItemList";
 
-import ItemList from "../components/ItemList";
-
-/*
-export default function ItemListContainer({greeting}){
-  const [users, setUsers] = useState([]);
-
-
-  return (
-      <div className="style-container">
-          <h2>{greeting}</h2>
-          <itemList users={users}/>
-      </div>        
-  );
-}*/
 
 function getItemsFromDatabase(){
   return new Promise( (resolve,reject)=>{
@@ -24,10 +11,20 @@ function getItemsFromDatabase(){
   })
 } 
 
+/*
+function getItemsByCategoryFromDatabase(categoryURL) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let productsFiltered = Productos.filter( producto => producto.categoria === categoryURL )
+      resolve()
+    }, 1000);
+  })
+}*/
+
 // ---------------------------------------------------------------------------------------------------------------
 
 function ItemListContainer ({greeting}){
-  const [productos, setUsers] = useState([]);
+  const [Productos, setUsers] = useState([]);
 
   useEffect( () => {
     let promiseData = getItemsFromDatabase();
@@ -47,7 +44,7 @@ function ItemListContainer ({greeting}){
   return (
       <div className="style-container">
           <h2>{greeting}</h2>
-          <itemList productos={productos}/>
+          <ItemList Productos={Productos}/>
       </div>        
   );
 }

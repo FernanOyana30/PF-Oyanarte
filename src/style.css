@@ -80,3 +80,40 @@
 .style-container{
     padding-top: 20px;
 }
+
+
+/*Estilos cards*/
+
+.item-list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+    
+    .item-list{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .item-card{
+      width: 235px;
+      padding: 8px 12px;
+      box-shadow: 0px 3px 10px #ececed;
+      text-align: center;
+      margin: 8px 15px;
+      border-radius: 4px;
+      transition: all ease-in-out 0.2s;
+    }
+    .item-card:hover{
+      cursor: pointer;
+      box-shadow: 0px 6px 5px #dedede;
+      transform: translateY(-5px);
+    }
+    
+    h2 {
+      text-align: center;
+      color: blue;
+      font-size: 36px;
+    }
+  
