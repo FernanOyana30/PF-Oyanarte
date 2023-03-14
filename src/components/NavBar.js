@@ -11,8 +11,9 @@ export default function NavBar(){
                 </div>                
                 <ul className="style-nav">
                     <li><Link to="/" className="style-list" href="#">Inicio</Link></li>
-                    <li><Link to="/detalle" className="style-list" href="#">Detalle</Link></li>
-                    <li><a className="style-list" href="#">Vender</a></li>                    
+                    <li><Link to="/category/Pescados" className="style-list" href="#">Pescados</Link></li>
+                    <li><Link to="/category/Mariscos" className="style-list" href="#">Mariscos</Link></li>
+                    <li><Link to="/category/Conservas" className="style-list" href="#">Conservas</Link></li>                                      
                 </ul>
                 <div className='cart-style'>
                     <CartWidget />

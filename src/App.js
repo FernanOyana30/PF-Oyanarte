@@ -22,7 +22,12 @@ function App() {
           />
           
           <Route path="/detalle/:idUser" element={<ItemDetailContainer />} />
-          <ItemListContainer greeting={'Bienvenidos'} />          
+          
+          <Route 
+            path='/category/:idCategory'
+            element={<ItemListContainer greeting={"Bienvenidos"} />}
+          />
+          
         </Routes>      
       </BrowserRouter>      
     </div>

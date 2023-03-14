@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import productos from "../productos";
 import ItemList from "./ItemList";
+import productos from "../productos";
+import { useParams } from "react-router-dom";
 
-
+// -----------------------------------------------------------------------------------------------------------
 function getItemsFromDatabase(){
   return new Promise( (resolve,reject)=>{
     setTimeout( () => {
@@ -11,21 +12,40 @@ function getItemsFromDatabase(){
   })
 } 
 
-/*
+
 function getItemsByCategoryFromDatabase(categoryURL) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      let productsFiltered = Productos.filter( producto => producto.categoria === categoryURL )
-      resolve()
+      let productsFiltered = productos.filter( producto => producto.categoria === categoryURL )
+      resolve(productsFiltered)
     }, 1000);
   })
-}*/
+}
 
 // ---------------------------------------------------------------------------------------------------------------
 
 function ItemListContainer ({greeting}){
-  const [Productos, setUsers] = useState([]);
+  const [productos, setUsers] = useState([]);
 
+  const params = useParams();
+  const idCategory = params.idCategory
+
+  async function leerDatos() {
+    if (idCategory === undefined){
+      let respuesta = await getItemsFromDatabase();
+      setUsers(respuesta);      
+    } else{
+      let respuesta = await getItemsByCategoryFromDatabase(idCategory);
+      setUsers(respuesta); 
+    }
+
+  }
+
+  useEffect(() => {
+    leerDatos();
+  }, [idCategory]);
+
+  /*
   useEffect( () => {
     let promiseData = getItemsFromDatabase();
 
@@ -38,13 +58,13 @@ function ItemListContainer ({greeting}){
     )
 
   },
-  [] )
+  [] )*/
 
 
   return (
       <div className="style-container">
           <h2>{greeting}</h2>
-          <ItemList Productos={Productos}/>
+          <ItemList productos={productos}/>
       </div>        
   );
 }

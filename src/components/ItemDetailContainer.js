@@ -1,25 +1,30 @@
-import productos from "../productos";
-import { useState, useEffect } from "react";
 import "../style.css";
+import { useState, useEffect } from "react";
+import productos from "../productos";
 import { useParams } from "react-router-dom";
 
+//-------------------------------------------------
+function getSingleItemsFromDatabase(idItem ){
+  return new Promise( (resolve,reject)=>{
+    setTimeout( () => {
+      let encontrado = productos.find((producto) => producto.id === Number(idItem));
+        resolve(encontrado);      
+    }, 1000 )
+  })
+} 
 
+//-------------------------------------------------
 
 function ItemDetailContainer({ greeting }) {
   const [producto, setUser] = useState({});
 
   const params = useParams();
-  const idUser = params.idUser;
+  const idItem = params.idItem ;
 
   useEffect(() => {
-    const promesaItem = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        let encontrado = productos.find((producto) => producto.id === Number(idUser));
-        resolve(encontrado);
-      }, 2000);
-    });
-
-    promesaItem.then((respuesta) => setUser(respuesta));
+    getSingleItemsFromDatabase(idItem).then((respuesta) => {
+      setUser(respuesta);
+    })    
   }, []);
 
   return (
