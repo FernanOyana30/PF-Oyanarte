@@ -10,6 +10,7 @@ export default function ItemList({ productos }) {
           {productos.map((producto) => (         
 
             <li className="item-card" key={producto.id}>
+              <img src={producto.imagen} alt={producto.imagen} />
               <h4>{producto.nombre}</h4>
               <small>{producto.categoria}</small>           
               <br/>

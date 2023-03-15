@@ -32,10 +32,11 @@ function ItemDetailContainer({ greeting }) {
         <h2>{greeting}</h2>
 
         <ul className="item-list">
-          <li className="item-card" key={producto.id}>            
+          <li className="item-card" key={producto.id}>   
+            <img src={producto.imagen} alt={producto.imagen} />         
             <h4>{producto.nombre}</h4>
             <small>{producto.categoria}</small>
-            <small>{producto.precio}</small>
+            <small>${producto.precio}</small>
             <button>Agregar al carrito</button>
           </li>
         </ul>
