@@ -15,14 +15,14 @@ function getSingleItemsFromDatabase(idItem ){
 //-------------------------------------------------
 
 function ItemDetailContainer({ greeting }) {
-  const [producto, setUser] = useState({});
+  const [producto, setProduct] = useState({});
 
   const params = useParams();
   const idItem = params.idItem ;
 
   useEffect(() => {
     getSingleItemsFromDatabase(idItem).then((respuesta) => {
-      setUser(respuesta);
+      setProduct(respuesta);
     })    
   }, []);
 
