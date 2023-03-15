@@ -12,7 +12,6 @@ function getSingleItemsFromDatabase(idItem ){
     }, 1000 )
   })
 } 
-
 //-------------------------------------------------
 
 function ItemDetailContainer({ greeting }) {
@@ -36,7 +35,7 @@ function ItemDetailContainer({ greeting }) {
           <li className="item-card" key={producto.id}>            
             <h4>{producto.nombre}</h4>
             <small>{producto.categoria}</small>
-            <p>{producto.precio}</p>
+            <small>{producto.precio}</small>
             <button>Agregar al carrito</button>
           </li>
         </ul>
