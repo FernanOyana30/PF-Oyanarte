@@ -25,7 +25,7 @@ function getItemsByCategoryFromDatabase(categoryURL) {
 // ---------------------------------------------------------------------------------------------------------------
 
 function ItemListContainer ({greeting}){
-  const [productos, setProducts] = useState([]);
+  const [productos, setProducto] = useState([]);
 
   const params = useParams();
   const idCategory = params.idCategory
@@ -33,10 +33,10 @@ function ItemListContainer ({greeting}){
   async function leerDatos() {
     if (idCategory === undefined){
       let respuesta = await getItemsFromDatabase();
-      setProducts(respuesta);      
+      setProducto(respuesta);      
     } else{
       let respuesta = await getItemsByCategoryFromDatabase(idCategory);
-      setProducts(respuesta); 
+      setProducto(respuesta); 
     }
 
   }
