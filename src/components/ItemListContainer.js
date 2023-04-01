@@ -1,31 +1,53 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import productos from "../productos";
 import { useParams } from "react-router-dom";
 
 // -----------------------------------------------------------------------------------------------------------
-function getItemsFromDatabase(){
-  return new Promise( (resolve,reject)=>{
-    setTimeout( () => {
-      resolve(productos)
-    }, 1000 )
-  })
+//--------------------------------
+
+import {collection, getDocs, query, where } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import {getFirestore} from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDae7tSxLViNhwbZF4k5__M5hPtmNa5SPg",
+  authDomain: "el-capitan-tienda-eccomerce.firebaseapp.com",
+  projectId: "el-capitan-tienda-eccomerce",
+  storageBucket: "el-capitan-tienda-eccomerce.appspot.com",
+  messagingSenderId: "721287180087",
+  appId: "1:721287180087:web:2dad2416b3058ea83d74b2"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+//--------------------------------
+async function getItemsFromDatabase(){
+  const productsColectionRef = collection(db, "productos");
+  let snapshotProductos = await getDocs(productsColectionRef)
+  const documents = snapshotProductos.docs;
+
+  const dataProducts = documents.map((doc) => ({ ...doc.data(), id: doc.id }));
+  return dataProducts;   
+        
 } 
 
+async function getItemsByCategoryFromDatabase(categoryURL) {
+  const productsColectionRef = collection(db, "productos")
 
-function getItemsByCategoryFromDatabase(categoryURL) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let productsFiltered = productos.filter( producto => producto.categoria === categoryURL )
-      resolve(productsFiltered)
-    }, 1000);
-  })
+  const q = query(productsColectionRef, where("categoria", "==", categoryURL));
+
+  let snapshotProducts = await getDocs(q);
+  const documents = snapshotProducts.docs;
+  const dataProducts = documents.map((doc) => ({ ...doc.data(), id: doc.id}));
+  return dataProducts;
 }
 
 // ---------------------------------------------------------------------------------------------------------------
 
 function ItemListContainer ({greeting}){
   const [productos, setProducto] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const params = useParams();
   const idCategory = params.idCategory
@@ -33,10 +55,12 @@ function ItemListContainer ({greeting}){
   async function leerDatos() {
     if (idCategory === undefined){
       let respuesta = await getItemsFromDatabase();
-      setProducto(respuesta);      
+      setProducto(respuesta);   
+      setIsLoading(false);   
     } else{
       let respuesta = await getItemsByCategoryFromDatabase(idCategory);
       setProducto(respuesta); 
+      setIsLoading(false);
     }
 
   }
@@ -45,26 +69,15 @@ function ItemListContainer ({greeting}){
     leerDatos();
   }, [idCategory]);
 
-  /*
-  useEffect( () => {
-    let promiseData = getItemsFromDatabase();
-
-    console.log(promiseData); 
-    promiseData.then(
-      (respuesta) => {
-        console.log("respuesta", respuesta)
-        setUsers(respuesta) 
-      },
-    )
-
-  },
-  [] )*/
-
-
   return (
       <div className="style-container">
           <h2>{greeting}</h2>
-          <ItemList productos={productos}/>
+          {
+            isLoading ? 
+            <p>Cargando...</p>
+            :
+            <ItemList productos={productos}/>
+          }
       </div>        
   );
 }

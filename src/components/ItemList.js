@@ -1,6 +1,7 @@
 import React from "react";
 import '../style.css';
 import { Link } from "react-router-dom";
+import Button from "./Button"
 
 export default function ItemList({ productos }) {
   return (
@@ -11,12 +12,18 @@ export default function ItemList({ productos }) {
 
             <li className="item-card" key={producto.id}>
               <img src={producto.imagen} alt={producto.imagen} />
-              <h4>{producto.nombre}</h4>
+              <h5>{producto.nombre}</h5>
               <small>{producto.categoria}</small>           
               <br/>
+              {producto.oferta &&
+                <small style={{color: "green"}}>
+                  Oferta: {producto.oferta}%
+                </small>                
+              }
+              <small>${producto.precio}</small>
 
               <Link to={`/detalle/${producto.id}`}>
-                <button>Ver más detalles</button>
+                <Button>Ver más detalles</Button>
               </Link>
             </li>
           ))}

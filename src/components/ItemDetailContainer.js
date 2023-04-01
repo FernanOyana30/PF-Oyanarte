@@ -1,17 +1,39 @@
 import "../style.css";
 import { useState, useEffect } from "react";
-import productos from "../productos";
 import { useParams } from "react-router-dom";
+import ItemCount from "./ItemCount";
+import { useContext } from "react";
+import cartContext from "../context/cartContext";
 
+//--------------------------------
+
+import { initializeApp } from "firebase/app";
+import {getFirestore, collection, doc, getDoc} from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDae7tSxLViNhwbZF4k5__M5hPtmNa5SPg",
+  authDomain: "el-capitan-tienda-eccomerce.firebaseapp.com",
+  projectId: "el-capitan-tienda-eccomerce",
+  storageBucket: "el-capitan-tienda-eccomerce.appspot.com",
+  messagingSenderId: "721287180087",
+  appId: "1:721287180087:web:2dad2416b3058ea83d74b2"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+//--------------------------------
 //-------------------------------------------------
-function getSingleItemsFromDatabase(idItem ){
-  return new Promise( (resolve,reject)=>{
-    setTimeout( () => {
-      let encontrado = productos.find((producto) => producto.id === Number(idItem));
-        resolve(encontrado);      
-    }, 1000 )
-  })
+async function getSingleItemsFromDatabase(idItem){
+  const productsColectionRef = collection(db, "productos");
+  const docRef = doc(productsColectionRef, idItem);
+
+  const docSnapshot = await getDoc(docRef);
+  if (docSnapshot.exists() === false) throw new Error("No existe el documento");
+
+  return  {...docSnapshot.data(), id: docSnapshot.id};
 } 
+
 //-------------------------------------------------
 
 function ItemDetailContainer({ greeting }) {
@@ -23,8 +45,21 @@ function ItemDetailContainer({ greeting }) {
   useEffect(() => {
     getSingleItemsFromDatabase(idItem).then((respuesta) => {
       setProducto(respuesta);
-    })    
-  }, []);
+    }).catch(error => alert(error))
+  }, []);  
+  
+  const {addItem} = useContext(cartContext)
+
+  /**Funcion Agregar al carrito*/
+  function onAddToCart(count){
+    alert(`Agregaste ${count} items al carrito`);
+    addItem(producto, count);
+  } 
+
+  /*-----------------------*/
+  if (producto.nombre === undefined) 
+  return <p>Cargando...</p> 
+
 
   return (
     <>
@@ -37,7 +72,8 @@ function ItemDetailContainer({ greeting }) {
             <h4>{producto.nombre}</h4>
             <small>{producto.categoria}</small>
             <small>${producto.precio}</small>
-            <button>Agregar al carrito</button>
+            
+            <ItemCount onAddToCart={onAddToCart} initial={1} stock={producto.stock} />
           </li>
         </ul>
       </div>

@@ -17,7 +17,9 @@ export default function NavBar(){
                                                                            
                 </ul>
                 <div className='cart-style'>
-                    <CartWidget />
+                    <Link to="/cart">
+                        <CartWidget />
+                    </Link>
                 </div>                
             </div>            
         </header>
