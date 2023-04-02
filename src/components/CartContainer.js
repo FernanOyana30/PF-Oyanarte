@@ -1,17 +1,20 @@
 import React from "react";
 import {useContext} from "react";
 import cartContext from "../context/cartContext";
+import CheckoutCart from "./CheckoutCart";
 
 function CartContainer(){
-    const {cart} = useContext(cartContext)
+    const {cart, getPriceInCart} = useContext(cartContext)
 
     if(cart.length === 0)
-    return ( <div>
+    return ( 
+    <div>
         <h3>Carrito de compras</h3>
         <p>Tu carrito está vacío. Agrega productos para finalizar tu compra</p>
     </div> ) 
 
     return (
+        <>
         <div>
             <h3>Tu carrito de compras</h3>
             {cart.map((item) => {
@@ -24,9 +27,14 @@ function CartContainer(){
                     </div>
 
                 );
-                <h3>El total de tu compra es: </h3>
             })}        
         </div>
+        <div>
+            <h3>El total de tu compra es: </h3>
+        </div>
+
+        <CheckoutCart total={getPriceInCart()} cart={cart}/>
+        </>
     );
 }
 

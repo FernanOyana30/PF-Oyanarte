@@ -4,7 +4,7 @@ const cartContext = createContext({
     cart: [],
 });
 
-function CartContextProvider(props){
+ function CartContextProvider(props){
     const [cart, setCart] = useState([]);
 
     function addItem(producto, count){
