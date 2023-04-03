@@ -7,10 +7,10 @@ function CartWidget() {
     const {cart} = useContext(cartContext);
     const cartCount = cart.length; 
     return (
-        <a className='cart-style' href="#">
+        <span className='cart-style'>
             <BsFillCartFill className="cart-icon"></BsFillCartFill>
             <span className="cart-badge">{cartCount}</span>
-        </a>        
+        </span>        
     )
 }
 

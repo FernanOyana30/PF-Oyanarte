@@ -48,7 +48,7 @@ function ItemDetailContainer({ greeting }) {
     }).catch(error => alert(error))
   }, []);  
   
-  const {addItem} = useContext(cartContext)
+  const {addItem, isInCart } = useContext(cartContext)
 
   /**Funcion Agregar al carrito*/
   function onAddToCart(count){

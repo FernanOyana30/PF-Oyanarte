@@ -3,7 +3,7 @@ import {useContext} from "react";
 import cartContext from "../context/cartContext";
 
 function CartContainer(){
-    const {cart, getPriceInCart} = useContext(cartContext)
+    const {cart, removeItemFromCart} = useContext(cartContext)
 
     if(cart.length === 0)
     return ( 
@@ -23,6 +23,7 @@ function CartContainer(){
                         <p>Precio: {item.precio}</p>
                         <p>Cant. unidades: {item.count}</p>                        
                         <p>Total: {item.count * item.precio}</p>                        
+                        <button onClick={() => removeItemFromCart(item.id)}>Eliminar</button>
                     </div>
 
                 );
