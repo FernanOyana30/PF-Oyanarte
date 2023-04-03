@@ -33,8 +33,7 @@ function App() {
             element={<ItemListContainer greeting={"Bienvenidos"} />}
           />
 
-          <Route path="/cart" element={ <CartContainer/> } />
-          
+          <Route path="/cart" element={ <CartContainer/> } />          
         </Routes>      
       </BrowserRouter>      
     </CartContextProvider> 

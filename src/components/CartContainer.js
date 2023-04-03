@@ -1,7 +1,6 @@
 import React from "react";
 import {useContext} from "react";
 import cartContext from "../context/cartContext";
-import CheckoutCart from "./CheckoutCart";
 
 function CartContainer(){
     const {cart, getPriceInCart} = useContext(cartContext)
@@ -33,7 +32,7 @@ function CartContainer(){
             <h3>El total de tu compra es: </h3>
         </div>
 
-        <CheckoutCart total={getPriceInCart()} cart={cart}/>
+        
         </>
     );
 }
