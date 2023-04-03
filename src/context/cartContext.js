@@ -34,12 +34,16 @@ function CartContextProvider({children}){
         return total;
     }
 
+    function getPriceInCart() {
+        return 5600
+    }
+
     function isInCart(id){
         return cart.some(item => item.id === id)
     }
 
     return (
-        <cartContext.Provider value={{ cart, addItem, isInCart, removeItemFromCart }}>
+        <cartContext.Provider value={{ cart, addItem, isInCart, removeItemFromCart, getPriceInCart }}>
             {children}
         </cartContext.Provider>
         );

@@ -33,7 +33,9 @@ function App() {
             element={<ItemListContainer greeting={"Bienvenidos"} />}
           />
 
-          <Route path="/cart" element={ <CartContainer/> } />          
+          <Route path="/cart" element={ <CartContainer/> } />         
+          <Route path="/checkout/:id" element={ <h3>Gracias por tu compra</h3> } />         
+
         </Routes>      
       </BrowserRouter>      
     </CartContextProvider> 
