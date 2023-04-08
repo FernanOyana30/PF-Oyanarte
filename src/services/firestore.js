@@ -4,11 +4,11 @@ import { initializeApp } from "firebase/app";
 import {getFirestore, addDoc, collection} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDae7tSxLViNhwbZF4k5__M5hPtmNa5SPg",
-  authDomain: "el-capitan-tienda-eccomerce.firebaseapp.com",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: "el-capitan-tienda-eccomerce",
   storageBucket: "el-capitan-tienda-eccomerce.appspot.com",
-  messagingSenderId: "721287180087",
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_ID,
   appId: "1:721287180087:web:2dad2416b3058ea83d74b2"
 };
 
