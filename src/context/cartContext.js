@@ -22,22 +22,33 @@ function CartContextProvider({children}){
         setCart(newCart);   
     }    
 
+    /**FUNCIONES DEL CARRITO*/
+
+    //Remover producto del carrito
     function removeItemFromCart(id){
         const newCart = JSON.parse(JSON.stringify(cart));
         newCart.pop();
         setCart(newCart);
     }
 
+    //Vaciar carrito
+    function clearCart(id){
+        setCart([]);        
+    }
+
+    //Obtener total de productos en el carrito
     function getCountInCart() {
         let total = 0;
         cart.forEach((item) => total + item.count);
         return total;
     }
 
+    //Obtener precio total de compra
     function getPriceInCart() {
         return 5600
     }
 
+    //Verificar si un producto ya existe en el carrito
     function isInCart(id){
         return cart.some(item => item.id === id)
     }

@@ -19,19 +19,18 @@ function CartContainer(){
             <h3>Tu carrito de compras</h3>
             {cart.map((item) => {
                 return (
-                    <div>
+                    <div className= "cart-container">
                         <p>Producto: {item.nombre}</p>
-                        <p>Precio: {item.precio}</p>
+                        <p>Precio: ${item.precio}</p>
                         <p>Cant. unidades: {item.count}</p>                        
                         <p>Total: {item.count * item.precio}</p>                        
                         <button onClick={() => removeItemFromCart(item.id)}>Eliminar</button>
                     </div>
-
                 );
             })}        
         </div>
         <div>
-            <h3>El total de tu compra es: </h3>
+            <h5>El total de tu compra es: {getPriceInCart()} </h5>
         </div>
 
             <CheckoutCart total={getPriceInCart()} cart={cart}/>

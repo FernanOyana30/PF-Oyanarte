@@ -32,8 +32,8 @@ export default function CheckoutForm(props) {
 
   return (
     <div>
-      <h3>Completa tus datos para finalizar la compra</h3>
-      <div style={{ display: "flex", marginBottom: 8 }}>
+      <h5 style={{display: "flex", justifyContent: "center"}}>Completa tus datos para finalizar la compra</h5>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
         <input
           value={userData.name}
@@ -44,7 +44,7 @@ export default function CheckoutForm(props) {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Email</label>
         <input
           value={userData.email}
@@ -55,7 +55,7 @@ export default function CheckoutForm(props) {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Phone</label>
         <input
           value={userData.phone}
@@ -65,19 +65,17 @@ export default function CheckoutForm(props) {
           onChange={handleChange}
         />
       </div>
-      <button
-        disabled={
+      <button disabled={
           !(
             userData.name !== "" &&
             userData.phone !== "" &&
             userData.email !== ""
           )
         }
-        onClick={submitData}
-      >
+        onClick={submitData}>
         Crear orden
       </button>
-      <button onClick={clearForm}>limpiar form</button>
+      <button style={{marginLeft:"10px"}} onClick={clearForm}>limpiar form</button>
     </div>
   );
 }

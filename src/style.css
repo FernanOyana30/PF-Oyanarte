@@ -81,14 +81,11 @@
     padding-top: 20px;
 }
 
-
 /*Estilos cards*/
-
 .item-list-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
     
     .item-list{
@@ -119,3 +116,16 @@
       font-size: 36px;
     }
   
+    /*Estilos del carrito*/
+    .cart-container{
+        flex-direction: row;
+        background-color: rgb(229, 149, 149);
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        transform: translateX(350px);
+        
+    }
+
+    
+
