@@ -71,8 +71,8 @@ function ItemDetailContainer({ greeting }) {
             <img src={producto.imagen} alt={producto.imagen} />         
             <h4>{producto.nombre}</h4>
             <small>{producto.categoria}</small>
-            <small>${producto.precio}</small>
-            
+            <p>{producto.descripcion}</p>
+            <p>${producto.precio}</p>            
             <ItemCount onAddToCart={onAddToCart} initial={1} stock={producto.stock} />
           </li>
         </ul>

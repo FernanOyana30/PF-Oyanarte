@@ -13,8 +13,7 @@ export default function ItemList({ productos }) {
             <li className="item-card" key={producto.id}>
               <img src={producto.imagen} alt={producto.imagen} />
               <h5>{producto.nombre}</h5>
-              <small>{producto.categoria}</small>           
-              <br/>
+              <small>{producto.categoria}</small>                         
               {producto.oferta &&
                 <small style={{color: "green"}}>
                   Oferta: {producto.oferta}%

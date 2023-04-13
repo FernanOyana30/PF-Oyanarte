@@ -4,7 +4,7 @@ import cartContext from "../context/cartContext";
 import CheckoutCart from "./CheckoutCart";
 
 function CartContainer(){
-    const {cart, removeItemFromCart, getPriceInCart} = useContext(cartContext)
+    const {cart, removeItemFromCart, getPriceInCart, clearCart} = useContext(cartContext)
 
     if(cart.length === 0)
     return ( 
@@ -30,10 +30,13 @@ function CartContainer(){
             })}        
         </div>
         <div>
-            <h5>El total de tu compra es: {getPriceInCart()} </h5>
+            <h5>El total de tu compra es: ${getPriceInCart} </h5>
         </div>
+        <div>
+            <button onClick={clearCart}>Vaciar carrito</button>
+        </div><br></br>
 
-            <CheckoutCart total={getPriceInCart()} cart={cart}/>
+            <CheckoutCart total={getPriceInCart} cart={cart}/>
         
         </>
     );

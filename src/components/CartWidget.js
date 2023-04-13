@@ -4,12 +4,13 @@ import {useContext} from "react";
 import cartContext from "../context/cartContext";
 
 function CartWidget() {
-    const {cart} = useContext(cartContext);
-    const cartCount = cart.length; 
+    const {cart, getCountInCart} = useContext(cartContext);
+    //const cartCount = cart.length; 
+    
     return (
         <span className='cart-style'>
             <BsFillCartFill className="cart-icon"></BsFillCartFill>
-            <span className="cart-badge">{cartCount}</span>
+            <span className="cart-badge">{getCountInCart}</span>
         </span>        
     )
 }

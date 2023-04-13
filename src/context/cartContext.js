@@ -1,4 +1,4 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 
 const cartContext = createContext({ 
     cart: [],
@@ -24,29 +24,29 @@ function CartContextProvider({children}){
 
     /**FUNCIONES DEL CARRITO*/
 
-    //Remover producto del carrito
+    //Remover producto del carrito (FUNCIONA)
     function removeItemFromCart(id){
-        const newCart = JSON.parse(JSON.stringify(cart));
-        newCart.pop();
-        setCart(newCart);
+        setCart(cart.filter((prod) => prod.id !== id) );
     }
 
-    //Vaciar carrito
+    //Vaciar carrito (FUNCIONA)
     function clearCart(id){
         setCart([]);        
-    }
-
+    }    
+    
     //Obtener total de productos en el carrito
-    function getCountInCart() {
-        let total = 0;
-        cart.forEach((item) => total + item.count);
-        return total;
-    }
-
+    const getCountInCart = cart.reduce ((acc, item) => {
+        return acc = acc + item.count
+    }, 0)
+    console.log(getCountInCart)
+  
     //Obtener precio total de compra
-    function getPriceInCart() {
-        return 5600
-    }
+    const getPriceInCart = cart.reduce ((acc, prod) => {
+        return acc = acc + prod.count * prod.precio
+    }, 0)
+    console.log(getPriceInCart)    
+
+    //--------------------------------------------------
 
     //Verificar si un producto ya existe en el carrito
     function isInCart(id){
@@ -54,7 +54,7 @@ function CartContextProvider({children}){
     }
 
     return (
-        <cartContext.Provider value={{ cart, addItem, isInCart, removeItemFromCart, getPriceInCart }}>
+        <cartContext.Provider value={{ cart, addItem, isInCart, clearCart, removeItemFromCart, getCountInCart, getPriceInCart }}>
             {children}
         </cartContext.Provider>
         );
