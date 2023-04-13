@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader"
 
 // -----------------------------------------------------------------------------------------------------------
 //--------------------------------
@@ -74,7 +75,7 @@ function ItemListContainer ({greeting}){
           <h2>{greeting}</h2>
           {
             isLoading ? 
-            <p>Cargando...</p>
+            <Loader/>
             :
             <ItemList productos={productos}/>
           }

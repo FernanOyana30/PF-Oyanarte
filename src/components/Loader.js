@@ -1,8 +1,12 @@
 import React from "react";
-import { Ping } from "@uiball/loaders";
+import { Ring } from '@uiball/loaders';
 
 function Loader(props) {
-  return <Ping size={225} speed={1} color={props.color || "orange" } />;
+  return <Ring 
+    size={45}
+    speed={1} 
+    color="black" 
+ />;
 }
 
 export default Loader;

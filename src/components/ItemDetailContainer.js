@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useContext } from "react";
 import cartContext from "../context/cartContext";
+import Loader from "./Loader"
 
 //--------------------------------
 
@@ -58,7 +59,7 @@ function ItemDetailContainer({ greeting }) {
 
   /*-----------------------*/
   if (producto.nombre === undefined) 
-  return <p>Cargando...</p> 
+  return <Loader/> 
 
 
   return (
