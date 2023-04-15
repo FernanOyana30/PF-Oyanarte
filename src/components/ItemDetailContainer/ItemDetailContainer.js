@@ -5,6 +5,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
 import cartContext from "../../context/cartContext";
 import Loader from "../Loader/Loader"
+import Swal from 'sweetalert2'
 
 //--------------------------------
 
@@ -53,7 +54,13 @@ function ItemDetailContainer({ greeting }) {
 
   /**Funcion Agregar al carrito*/
   function onAddToCart(count){
-    alert(`Agregaste ${count} items al carrito`);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `Agregaste ${count} items al carrito`,
+      showConfirmButton: false,
+      timer: 1500
+    })
     addItem(producto, count);
   } 
 

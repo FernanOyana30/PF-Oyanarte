@@ -5,7 +5,8 @@ function Button(props){
         backgroundColor: props.color || "green",
         color: "white",
         padding: "4px 10px",
-        borderRadius: "8px",
+        borderRadius: "8px",   
+        borderColor: "lightGray",     
     };
 
     return (

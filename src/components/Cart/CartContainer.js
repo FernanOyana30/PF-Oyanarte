@@ -36,7 +36,7 @@ function CartContainer(){
                                 <td>{item.count}</td>                        
                                 <td>{item.count * item.precio}</td>                        
                                 <td >
-                                    <button color="red" className="deleteButton" onClick={() => removeItemFromCart(item.id)}>Eliminar</button>
+                                    <button className="deleteButton" onClick={() => removeItemFromCart(item.id)}>Eliminar</button>
                                 </td>
                             </tr>
                         );
@@ -48,7 +48,7 @@ function CartContainer(){
             <h5>El total de tu compra es: ${getPriceInCart} </h5>
         </div>
         <div>
-            <button color="gray" onClick={clearCart}>Vaciar carrito</button>
+            <button className="deleteButton" onClick={clearCart}>Vaciar carrito</button>
         </div><br></br>
 
             <CheckoutCart total={getPriceInCart} cart={cart}/>

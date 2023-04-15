@@ -19,14 +19,14 @@ const ItemCount = ({ initial, stock, onAddToCart}) => {
 
     return (
         <div>
-            <Button color="red" onTouchButton={decrease}  >
+            <Button color="OrangeRed" onTouchButton={decrease}  >
                 -
             </Button>
             <span>{count}</span>
-            <Button onTouchButton={increase} color="green">
+            <Button onTouchButton={increase} color="LimeGreen">
                 +
             </Button>
-            <Button onTouchButton={() => onAddToCart(count) } color="gray">
+            <Button onTouchButton={() => onAddToCart(count) } color="DarkOrange">
                 Agregar al carrito 
             </Button>
         </div>

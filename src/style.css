@@ -165,7 +165,11 @@ h2 {
 }
 
 .deleteButton{
-  width: 100px;
+  width: 110px;
+  background-color: rgb(250, 10, 10);
+  color: white;
+  border-radius: 5px;
+  border-color: lightgray;
 }
       
 .cartDetail{
