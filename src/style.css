@@ -1,5 +1,5 @@
+/*--------------------------------------------------------------------
 /*Estilos Navbar*/
-
 .navBar{
     background-color: rgb(78, 132, 250);
     display: flex;
@@ -45,7 +45,7 @@
     color: orange;
 }
 
-
+/*--------------------------------------------------------------------
 /*Estilos ícono carrito*/
 .cart-style{    
     color: white;
@@ -76,11 +76,13 @@
     font-size: 14px;
 }
 
+/*--------------------------------------------------------------------
 /*Estilos ItemListContainer*/
 .style-container{
     padding-top: 20px;
 }
 
+/*--------------------------------------------------------------------
 /*Estilos cards*/
 .item-list-container {
     display: flex;
@@ -88,44 +90,89 @@
     justify-content: center;
 }
     
-    .item-list{
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-    }
-    .item-card{
-      width: 235px;
-      padding: 8px 12px;
-      box-shadow: 0px 3px 10px #ececed;
-      text-align: center;
-      margin: 8px 15px;
-      border-radius: 4px;
-      transition: all ease-in-out 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-    .item-card:hover{
-      cursor: pointer;
-      box-shadow: 0px 6px 5px #dedede;
-      transform: translateY(-5px);
-    }
-    
-    h2 {
-      text-align: center;
-      color: blue;
-      font-size: 36px;
-    }
+.item-list{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.item-card{
+  width: 235px;
+  padding: 8px 12px;
+  box-shadow: 0px 3px 10px #ececed;
+  text-align: center;
+  margin: 8px 15px;
+  border-radius: 4px;
+  transition: all ease-in-out 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.item-card:hover{
+  cursor: pointer;
+  box-shadow: 0px 6px 5px #dedede;
+  transform: translateY(-5px);
+}
+
+h2 {
+  text-align: center;
+  color: blue;
+  font-size: 36px;
+}
+
+/*--------------------------------------------------------------------  
+/*Estilos tabla del carrito*/  
+.cartTable{
+    border-spacing: 0;
+    border-radius: 5px;
+    border: solid 1px rgb(0, 0, 0);  
+    width: 70%;
+    margin: 15px auto;
+    text-align: center;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
+    color: white;        
+}
+      
+.cartHead{
+  background-color: rgb(243, 129, 63);;
+  margin: 8px auto;
+}
   
-    /*Estilos del carrito*/
-    .cart-container{
-        flex-direction: row;
-        background-color: rgb(229, 149, 149);
-        display: flex;
-        justify-content: space-between;
-        width: 60%;
-        transform: translateX(350px);
-        
-    }
+.cartRow{
+  line-height: 36px;
+  width: 25px; 
+  color: black;       
+}
 
-    
+.cartRowName{
+  width: 100px;
+  
+}
 
+.cartRowPrice{
+  width: 40px;
+  
+}
+
+.cartRowUnit{
+  width: 20px;
+}
+.cartRowTotal{
+  width: 40px;
+}
+
+.cartRowDelete{
+  width: 100px;
+}
+
+.deleteButton{
+  width: 100px;
+}
+      
+.cartDetail{
+  color: #000000;
+  text-align: center;
+  line-height: 1.5em;
+  width: 100%;
+  padding-top: 10px;
+} 
+
+/*--------------------------------------------------------------------*/

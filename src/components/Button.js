@@ -2,7 +2,7 @@ import React from "react";
 
 function Button(props){
     const stylesButton = {
-        backgroundColor: "green",
+        backgroundColor: props.color || "green",
         color: "white",
         padding: "4px 10px",
         borderRadius: "8px",

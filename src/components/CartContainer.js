@@ -2,6 +2,7 @@ import React from "react";
 import {useContext} from "react";
 import cartContext from "../context/cartContext";
 import CheckoutCart from "./CheckoutCart";
+import Button from "./Button"
 
 function CartContainer(){
     const {cart, removeItemFromCart, getPriceInCart, clearCart} = useContext(cartContext)
@@ -17,23 +18,38 @@ function CartContainer(){
         <>
         <div>
             <h3>Tu carrito de compras</h3>
-            {cart.map((item) => {
-                return (
-                    <div className= "cart-container">
-                        <p>Producto: {item.nombre}</p>
-                        <p>Precio: ${item.precio}</p>
-                        <p>Cant. unidades: {item.count}</p>                        
-                        <p>Total: {item.count * item.precio}</p>                        
-                        <button onClick={() => removeItemFromCart(item.id)}>Eliminar</button>
-                    </div>
-                );
-            })}        
+            <table className="cartTable">
+                <thead className="cartHead" >
+                    <tr className="cartRow">
+                        <th className="cartRowName">Producto</th>
+                        <th className="cartRowPrice">Precio</th>
+                        <th className="cartRowUnit">Cant. unidades</th>
+                        <th className="cartRowTotal">Total</th>
+                        <th className="cartRowDelete"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {cart.map((item) => {
+                    return (
+                            <tr key={item.id} className="cartRow" >
+                                <td>{item.nombre}</td>
+                                <td>${item.precio}</td>
+                                <td>{item.count}</td>                        
+                                <td>{item.count * item.precio}</td>                        
+                                <td >
+                                    <button color="red" className="deleteButton" onClick={() => removeItemFromCart(item.id)}>Eliminar</button>
+                                </td>
+                            </tr>
+                        );
+                    })}  
+                </tbody>
+            </table>                   
         </div>
-        <div>
+        <div className="cartDetail" >
             <h5>El total de tu compra es: ${getPriceInCart} </h5>
         </div>
         <div>
-            <button onClick={clearCart}>Vaciar carrito</button>
+            <button color="gray" onClick={clearCart}>Vaciar carrito</button>
         </div><br></br>
 
             <CheckoutCart total={getPriceInCart} cart={cart}/>
