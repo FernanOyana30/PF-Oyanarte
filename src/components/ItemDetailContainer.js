@@ -66,7 +66,6 @@ function ItemDetailContainer({ greeting }) {
     <>
       <div className="item-list-container">
         <h2>{greeting}</h2>
-
         <ul className="item-list">
           <li className="item-card" key={producto.id}>   
             <img src={producto.imagen} alt={producto.imagen} />         

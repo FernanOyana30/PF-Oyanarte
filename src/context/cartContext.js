@@ -23,7 +23,6 @@ function CartContextProvider({children}){
     }    
 
     /**FUNCIONES DEL CARRITO*/
-
     //Remover producto del carrito (FUNCIONA)
     function removeItemFromCart(id){
         setCart(cart.filter((prod) => prod.id !== id) );

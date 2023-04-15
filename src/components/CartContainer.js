@@ -2,7 +2,6 @@ import React from "react";
 import {useContext} from "react";
 import cartContext from "../context/cartContext";
 import CheckoutCart from "./CheckoutCart";
-import Button from "./Button"
 
 function CartContainer(){
     const {cart, removeItemFromCart, getPriceInCart, clearCart} = useContext(cartContext)

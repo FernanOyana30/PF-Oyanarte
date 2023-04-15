@@ -95,6 +95,7 @@
   flex-wrap: wrap;
   list-style: none;
 }
+
 .item-card{
   width: 235px;
   padding: 8px 12px;
@@ -106,6 +107,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .item-card:hover{
   cursor: pointer;
   box-shadow: 0px 6px 5px #dedede;
@@ -143,18 +145,17 @@ h2 {
 }
 
 .cartRowName{
-  width: 100px;
-  
+  width: 100px;  
 }
 
 .cartRowPrice{
-  width: 40px;
-  
+  width: 40px;  
 }
 
 .cartRowUnit{
   width: 20px;
 }
+
 .cartRowTotal{
   width: 40px;
 }
