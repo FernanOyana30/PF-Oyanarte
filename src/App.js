@@ -2,12 +2,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {CartContextProvider} from './context/cartContext';
-import CartContainer from "./components/CartContainer";
+import CartContainer from "./components/Cart/CartContainer";
 
 //--------------------------------
 

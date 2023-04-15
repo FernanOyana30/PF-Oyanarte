@@ -1,5 +1,5 @@
 import React from "react"
-import {createOrder} from '../services/firestore'
+import {createOrder} from '../../services/firestore'
 import {useNavigate} from "react-router-dom"
 import CheckoutForm from "./CheckoutForm";
 

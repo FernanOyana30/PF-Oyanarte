@@ -1,10 +1,10 @@
-import "../style.css";
+import "../../style.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
-import cartContext from "../context/cartContext";
-import Loader from "./Loader"
+import cartContext from "../../context/cartContext";
+import Loader from "../Loader/Loader"
 
 //--------------------------------
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ItemList from "./ItemList";
+import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import Loader from "./Loader"
+import Loader from "../Loader/Loader"
 
 // -----------------------------------------------------------------------------------------------------------
 //--------------------------------

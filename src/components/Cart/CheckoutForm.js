@@ -75,7 +75,7 @@ export default function CheckoutForm(props) {
         onClick={submitData}>
         Crear orden
       </button>
-      <button style={{marginLeft:"10px"}} onClick={clearForm}>limpiar form</button>
+      <button style={{marginLeft:"10px"}} onClick={clearForm}>Limpiar form</button>
     </div>
   );
 }
