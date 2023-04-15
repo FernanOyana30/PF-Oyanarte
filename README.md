@@ -9,15 +9,25 @@ Tutor: Federico Blautzik
 Crear una aplicación para una tienda ecommerce utilizando React Js. 
 
 Contenidos vistos durante el curso: 
+
 -Configuración del entorno de React. Crear una aplicación desde 0.
+
 -Transpilling y JSX. Integrar Pollifills al proyecto.
+
 -Creación de componentes (NavBar, CartWidget, ItemCount, Button, ItemDetailContainer, ItemListContainer...) 
+
 -Promises, asincronía y map.
+
 -Consumir api de forma local y remota.
+
 -Routing y navegación. Configurar las rutas de enlace para comunicar los componentes.
+
 -Crear eventos para brindarle funcionalidad a los distintos botones.
+
 -Crear Context para un carrito de compras.
+
 -Técnicas de rendering.
+
 -Creación de una base de datos con Firebase para enlazar productos.
 
 ### Sobre este proyecto: 
