@@ -1,11 +1,11 @@
-**EL CAPITAN, TIENDA ECOMMERCE**
+# EL CAPITAN, TIENDA ECOMMERCE
 
 Proyecto final para el curso de React de Coderhouse. Comisión #39575 a cargo del profesor Santiago Salkin.
 
 Alumno: Fernando Oyanarte
 Tutor: Federico Blautzik
 
-# Objetivos del curso: 
+## Objetivos del curso: 
 Crear una aplicación para una tienda ecommerce utilizando React Js. 
 
 Contenidos vistos durante el curso: 
@@ -20,7 +20,7 @@ Contenidos vistos durante el curso:
 -Técnicas de rendering.
 -Creación de una base de datos con Firebase para enlazar productos.
 
-## Sobre este proyecto: 
+### Sobre este proyecto: 
 Una tienda ecommerce orientada a la venta de pescados, mariscos y productos relacionados (conservas). 
 El usuario podrá ver la lista de los productos disponibles en la pantalla de inicio, su precio, y filtrarlos entre diferentes categorías.
 Ingresando al detalle del producto podrá ver la descripción completa, así como agregar 1 o varias unidades de un mismo producto al carrito de compras.
