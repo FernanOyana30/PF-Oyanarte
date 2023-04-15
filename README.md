@@ -37,6 +37,12 @@ Ingresando al detalle del producto podrá ver la descripción completa, así com
 Dentro del carrito el usuario podrá ver el detalle de los productos añadidos (nombre, precio unitario, cantidad de productos y subtotal), 
 eliminarlos de forma individual o vaciar el carrito. Podrá ver el total del valor de su compra y completar un formulario para finalizarla.   
 
+#### Deploy del proyecto: 
+
+https://pf-oyanarte.vercel.app/
+
+
+
 
 -------------------------------------------------------------------------------------------------------------
 # Getting Started with Create React App
