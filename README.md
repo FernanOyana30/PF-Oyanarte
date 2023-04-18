@@ -35,7 +35,7 @@ https://pf-oyanarte.vercel.app/
 
 -------------------------------------------------------------------------------------------------------------
 
-# Ejecutar este proyecto
+## Ejecutar este proyecto
 
 - git clone https://github.com/FernanOyana30/PF-Oyanarte.git 
 - npm install
@@ -43,7 +43,7 @@ https://pf-oyanarte.vercel.app/
 
 -------------------------------------------------------------------------------------------------------------
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
