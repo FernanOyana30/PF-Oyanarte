@@ -5,33 +5,24 @@ Proyecto final para el curso de React de Coderhouse. Comisión #39575 a cargo de
 Alumno: Fernando Oyanarte
 Tutor: Federico Blautzik
 
-## Objetivos del curso: 
+## Objetivos del curso 
 Crear una aplicación para una tienda ecommerce utilizando React Js. 
 
-Contenidos vistos durante el curso: 
+**Contenidos vistos durante el curso**
 
--Configuración del entorno de React. Crear una aplicación desde 0.
+- Configuración del entorno de React. Crear una aplicación desde 0.
+- Transpilling y JSX. Integrar Pollifills al proyecto.
+- Creación de componentes (NavBar, CartWidget, ItemCount, Button, ItemDetailContainer, ItemListContainer...) 
+- Promises, asincronía y map.
+- Consumir api de forma local y remota.
+- Routing y navegación. Configurar las rutas de enlace para comunicar los componentes.
+- Crear eventos para brindarle funcionalidad a los distintos botones.
+- Crear Context para un carrito de compras.
+- Técnicas de rendering.
+- Creación de una base de datos con Firebase para enlazar productos.
 
--Transpilling y JSX. Integrar Pollifills al proyecto.
-
--Creación de componentes (NavBar, CartWidget, ItemCount, Button, ItemDetailContainer, ItemListContainer...) 
-
--Promises, asincronía y map.
-
--Consumir api de forma local y remota.
-
--Routing y navegación. Configurar las rutas de enlace para comunicar los componentes.
-
--Crear eventos para brindarle funcionalidad a los distintos botones.
-
--Crear Context para un carrito de compras.
-
--Técnicas de rendering.
-
--Creación de una base de datos con Firebase para enlazar productos.
-
-### Sobre este proyecto: 
-Una tienda ecommerce orientada a la venta de pescados, mariscos y productos relacionados (conservas). 
+### Sobre este proyecto 
+Una tienda ecommerce orientada a la venta de pescados, mariscos y productos de mar (conservas). 
 El usuario podrá ver la lista de los productos disponibles en la pantalla de inicio, su precio, y filtrarlos entre diferentes categorías.
 Ingresando al detalle del producto podrá ver la descripción completa, así como agregar 1 o varias unidades de un mismo producto al carrito de compras.
 Dentro del carrito el usuario podrá ver el detalle de los productos añadidos (nombre, precio unitario, cantidad de productos y subtotal), 
@@ -42,9 +33,16 @@ eliminarlos de forma individual o vaciar el carrito. Podrá ver el total del val
 https://pf-oyanarte.vercel.app/
 
 
+-------------------------------------------------------------------------------------------------------------
 
+# Ejecutar este proyecto
+
+- git clone https://github.com/FernanOyana30/PF-Oyanarte.git 
+- npm install
+- npm start
 
 -------------------------------------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
