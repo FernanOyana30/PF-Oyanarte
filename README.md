@@ -1,7 +1,5 @@
 # EL CAPITAN, TIENDA ECOMMERCE
 
-(https://drive.google.com/file/d/1SDJ_JaHJ6mLRoY0FQPXthiTBWY4OmR_W/view?usp=share_link)
-
 Proyecto final para el curso de React de Coderhouse. Comisión #39575 a cargo del profesor Santiago Salkin.
 
 Alumno: Fernando Oyanarte
