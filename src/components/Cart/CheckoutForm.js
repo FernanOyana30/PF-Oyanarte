@@ -4,7 +4,8 @@ export default function CheckoutForm(props) {
   const [userData, setUserData] = useState({
     name: "",
     email: "",
-    phone: "",
+    phone: "",    
+    address: "",
   });
 
   console.log(userData);
@@ -22,7 +23,8 @@ export default function CheckoutForm(props) {
     setUserData({
       name: "",
       email: "",
-      phone: "",
+      phone: "",      
+      address: "",
     });
   }
 
@@ -56,10 +58,20 @@ export default function CheckoutForm(props) {
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Phone</label>
+        <label style={{ width: "100px", marginRight: 4 }}>Teléfono</label>
         <input
           value={userData.phone}
           name="phone"
+          type="text"
+          required
+          onChange={handleChange}
+        />
+      </div>      
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
+        <label style={{ width: "100px", marginRight: 4 }}>Dirección</label>
+        <input
+          value={userData.address}
+          name="address"
           type="text"
           required
           onChange={handleChange}
@@ -69,13 +81,14 @@ export default function CheckoutForm(props) {
           !(
             userData.name !== "" &&
             userData.phone !== "" &&
-            userData.email !== ""
+            userData.email !== "" &&
+            userData.address !== ""
           )
         }
         onClick={submitData}>
         Crear orden
       </button>
-      <button className="deleteButton" style={{marginLeft:"10px"}} onClick={clearForm}>Limpiar form</button>
+      <button className="deleteButton" style={{marginLeft:"10px"}} onClick={clearForm}>Vaciar</button>
     </div>
   );
 }

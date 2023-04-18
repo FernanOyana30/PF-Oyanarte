@@ -34,7 +34,7 @@ function App() {
           />
 
           <Route path="/cart" element={ <CartContainer/> } />         
-          <Route path="/checkout/:id" element={ <h3>Gracias por tu compra</h3> } />         
+          <Route path="/checkout/:id" element={ <h3>¡Muchas gracias por tu compra! Tu pedido ya está en marcha</h3> } />         
 
         </Routes>      
       </BrowserRouter>      
